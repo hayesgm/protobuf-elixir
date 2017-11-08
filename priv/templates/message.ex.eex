@@ -1,5 +1,5 @@
 defmodule <%= name %> do
-  use Protobuf<%= options %>
+  use Protobufex<%= options %>
 
   <%= typespec %>
   defstruct [<%= struct_fields %>]

@@ -1,11 +1,11 @@
 defmodule TestMsg do
   defmodule SyntaxOption do
-    use Protobuf, syntax: :proto3
+    use Protobufex, syntax: :proto3
     defstruct []
   end
 
   defmodule Foo.Bar do
-    use Protobuf, syntax: :proto3
+    use Protobufex, syntax: :proto3
 
     defstruct [:a, :b]
 
@@ -14,7 +14,7 @@ defmodule TestMsg do
   end
 
   defmodule EnumFoo do
-    use Protobuf, enum: true, syntax: :proto3
+    use Protobufex, enum: true, syntax: :proto3
 
     field :A, 1
     field :B, 2
@@ -22,7 +22,7 @@ defmodule TestMsg do
   end
 
   defmodule MapFoo do
-    use Protobuf, map: true, syntax: :proto3
+    use Protobufex, map: true, syntax: :proto3
 
     defstruct [:key, :value]
     field :key, 1, type: :string
@@ -30,7 +30,7 @@ defmodule TestMsg do
   end
 
   defmodule Foo do
-    use Protobuf, syntax: :proto3
+    use Protobufex, syntax: :proto3
 
     defstruct [:a, :b, :c, :d, :e, :f, :g, :h, :i, :j, :k, :l, :m]
 
@@ -51,7 +51,7 @@ defmodule TestMsg do
   end
 
   defmodule Foo2 do
-    use Protobuf, syntax: :proto2
+    use Protobufex, syntax: :proto2
 
     defstruct [:a, :b, :c, :d, :e, :f, :g, :h, :i, :j, :k, :l, :m]
 
@@ -72,7 +72,7 @@ defmodule TestMsg do
   end
 
   defmodule Oneof do
-    use Protobuf
+    use Protobufex
 
     defstruct [:first, :second, :other]
 
@@ -86,13 +86,13 @@ defmodule TestMsg do
   end
 
   defmodule Parent do
-    use Protobuf, syntax: :proto3
+    use Protobufex, syntax: :proto3
     defstruct [:child]
     field :child, 1, type: Parent.Child
   end
 
   defmodule Parent.Child do
-    use Protobuf, syntax: :proto3
+    use Protobufex, syntax: :proto3
     defstruct [:parent]
     field :parent, 1, type: Parent
   end

@@ -1,10 +1,10 @@
-defmodule Protobuf.Mixfile do
+defmodule Protobufex.Mixfile do
   use Mix.Project
 
-  @version "0.4.1"
+  @version "0.5.0"
 
   def project do
-    [app: :protobuf,
+    [app: :protobufex,
      version: @version,
      elixir: "~> 1.4",
      build_embedded: Mix.env == :prod,
@@ -63,7 +63,7 @@ defmodule Protobuf.Mixfile do
   def test_integration(args) do
     IO.puts "==> mix escript.build"
     {_, 0} = System.cmd "mix", ["escript.build"], into: IO.binstream(:stdio, :line)
-    test_path = "test/protobuf/protoc"
+    test_path = "test/protobufex/protoc"
     args1 = ["-I", "#{test_path}/proto", "--elixir_out=#{test_path}/proto_gen",
       "--plugin=protoc-gen-elixir=protoc-gen-elixir",
       "#{test_path}/proto/test.proto"]

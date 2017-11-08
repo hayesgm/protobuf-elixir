@@ -1,8 +1,8 @@
-defmodule Protobuf.EncodeDecodeVarintTest do
+defmodule Protobufex.EncodeDecodeVarintTest do
   use ExUnit.Case
   use EQC.ExUnit
 
-  alias Protobuf.{Encoder, Decoder}
+  alias Protobufex.{Encoder, Decoder}
 
   property "varint roundtrip" do
     forall {n, tail} <- {largeint(), binary()} do

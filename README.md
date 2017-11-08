@@ -22,7 +22,7 @@ by adding `protobuf` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:protobuf, "~> 0.3.1"}]
+  [{:protobufex, "~> 0.5.0"}]
 end
 ```
 
@@ -58,7 +58,7 @@ $ protoc --elixir_out=./lib helloword.proto
 
 ```elixir
 defmodule Helloworld.HelloRequest do
-  use Protobuf, syntax: :proto3
+  use Protobufex, syntax: :proto3
 
   @type t :: %__MODULE__{
     name: String.t
@@ -69,7 +69,7 @@ defmodule Helloworld.HelloRequest do
 end
 
 defmodule Helloworld.HelloReply do
-  use Protobuf, syntax: :proto3
+  use Protobufex, syntax: :proto3
 
   @type t :: %__MODULE__{
     message: String.t

@@ -1,5 +1,5 @@
 defmodule <%= mod_name %> do
-  use Protobuf.Service
+  use Protobufex.Service
 
 <%= Enum.map methods, fn {method, nil} -> %>
   rpc <%= method %>
