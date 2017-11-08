@@ -44,7 +44,7 @@ defmodule Protobufex.Mixfile do
   end
 
   defp escript do
-    [main_module: Protobuf.Protoc.CLI,
+    [main_module: Protobufex.Protoc.CLI,
      name: "protoc-gen-elixir",
      app: nil]
   end
